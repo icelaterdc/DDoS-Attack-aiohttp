@@ -134,7 +134,7 @@ async def yuklu_spam_async(target):
     print(f"{Fore.LIGHTGREEN_EX}Asenkron yük testi başlatılıyor... (Çıkmak için Ctrl+C)")
     async with aiohttp.ClientSession() as session:
         tasks = []
-        concurrency = 10000  # <----- EŞ ZAMANLI GÖREV SAYISINI BURADA DEĞİŞTİREBİLİRSİNİZ (ASENKRON İÇİN)
+        concurrency = 10000  # <----- EŞ ZAMANLI GÖREV SAYISINI BURADAN DEĞİŞTİREBİLİRSİNİZ (ASENKRON İÇİN)
         for _ in range(concurrency):
             task = asyncio.create_task(async_attack(session, target))
             tasks.append(task)
